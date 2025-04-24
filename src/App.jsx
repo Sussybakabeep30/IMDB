@@ -11,12 +11,20 @@ import Banner from "./Components/Banner";
 function App() {
   const [watchList, setWatchList] = useState([]);
 
-  function handleAddToWatchList(movieObj){
-    const update = [...watchList, movieObj]
-    setWatchList(update);
-    console.log(update)
-
+  function handleAddToWatchList(movieObj) {
+    const isPresent = watchList.some((movie) => movie.id === movieObj.id);
+    let updatedList;
+  
+    if (isPresent) {
+      updatedList = watchList.filter((movie) => movie.id !== movieObj.id);
+    } else {
+      updatedList = [...watchList, movieObj];
+    }
+  
+    setWatchList(updatedList);
+    console.log("Updated Watchlist:", updatedList);
   }
+  
   return (
     <div>
       <BrowserRouter>
