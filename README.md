@@ -14,5 +14,7 @@ A sleek and responsive IMDb clone built with React and Tailwind CSS, allowing us
 
 # 🛠️ Tech Stack
 Frontend: React
+
 Styling: Tailwind CSS
+
 Data Source: TMDb API
